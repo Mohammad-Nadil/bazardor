@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="bn">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>আজকের বাজারদর - লোকেশন সিলেক্ট করুন</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;family=Noto+Sans+Bengali:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#307e34",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#141e15",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "Noto Sans Bengali", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Public Sans', 'Noto Sans Bengali', sans-serif;
+        }
+
+        .modal-overlay {
+            background-color: rgba(20, 30, 21, 0.6);
+            backdrop-filter: blur(4px);
+        }
+
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23307e34' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.5rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex items-center justify-center font-display">
+    <!-- Background Content Simulation -->
+    <div class="fixed inset-0 z-0 overflow-hidden opacity-40 pointer-events-none">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="px-4 md:px-40 flex flex-1 justify-center py-5">
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                    <header
+                        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 px-10 py-3">
+                        <div class="flex items-center gap-4 text-primary">
+                            <span class="material-symbols-outlined text-3xl">storefront</span>
+                            <h2
+                                class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em]">
+                                আজকের বাজারদর</h2>
+                        </div>
+                    </header>
+                    <div class="p-8 space-y-4">
+                        <div class="h-8 bg-primary/10 rounded w-1/3"></div>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="h-32 bg-primary/5 rounded-lg border border-primary/10"></div>
+                            <div class="h-32 bg-primary/5 rounded-lg border border-primary/10"></div>
+                            <div class="h-32 bg-primary/5 rounded-lg border border-primary/10"></div>
+                        </div>
+                        <div class="h-64 bg-primary/5 rounded-lg border border-primary/10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Location Selection Modal -->
+    <div class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div
+            class="bg-white dark:bg-slate-900 w-full max-w-[480px] rounded-xl shadow-2xl overflow-hidden border border-primary/10">
+            <!-- Modal Header -->
+            <div class="p-6 border-b border-primary/10">
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                        <span class="material-symbols-outlined">location_on</span>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-slate-900 dark:text-slate-100">আপনার লোকেশন সিলেক্ট করুন</h1>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">সঠিক বাজারদর দেখতে আপনার এলাকা নির্বাচন
+                            করুন</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Body -->
+            <div class="p-6 space-y-5">
+                <!-- Division Selection -->
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-lg text-primary">map</span>
+                        বিভাগ নির্বাচন করুন
+                    </label>
+                    <select
+                        class="w-full h-12 px-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all cursor-pointer">
+                        <option disabled="" selected="" value="">বিভাগ বেছে নিন</option>
+                        <option value="dhaka">ঢাকা</option>
+                        <option value="chattogram">চট্টগ্রাম</option>
+                        <option value="rajshahi">রাজশাহী</option>
+                        <option value="khulna">খুলনা</option>
+                        <option value="barishal">বরিশাল</option>
+                        <option value="sylhet">সিলেট</option>
+                        <option value="rangpur">রংপুর</option>
+                        <option value="mymensingh">ময়মনসিংহ</option>
+                    </select>
+                </div>
+                <!-- District Selection -->
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-lg text-primary">distance</span>
+                        জেলা নির্বাচন করুন
+                    </label>
+                    <select
+                        class="w-full h-12 px-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all cursor-pointer">
+                        <option disabled="" selected="" value="">জেলা বেছে নিন</option>
+                        <option value="1">ঢাকা সদর</option>
+                        <option value="2">গাজীপুর</option>
+                        <option value="3">নারায়ণগঞ্জ</option>
+                    </select>
+                </div>
+                <!-- Map Illustration Preview -->
+                <div class="relative w-full h-32 rounded-lg overflow-hidden border border-primary/10">
+                    <div class="absolute inset-0 bg-primary/5 flex items-center justify-center">
+                        <img alt="Map of Bangladesh location pointer" class="w-full h-full object-cover opacity-20"
+                            data-alt="Abstract map background with a location pin icon" data-location="Bangladesh"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6GEf3q0BhuWzcOXwZeyyDvEMTjJhV7BHA74Rzh3of61s0nzw4jc_V0qdZJzW3R0ePDI6yuJ-QBkMlJTaMXs4lHImHLwvlanTyM8OsfiJ9CRVKoziBhM4D45h81grDsW5bF0G50BmtPPf79lRdujsXzi66j24d2rJ_xViS6CwNuTMDopHUGAHysOjksyRXaC1ltUidYut5jq0_JF4-hGSDCXl6fxH0gmtkmM2We8zxcpEkP7Us8a_Xnth492ZaGnlwZE50W7oXq9lQ" />
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-4xl text-primary/40">explore</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Footer -->
+            <div class="p-6 bg-slate-50 dark:bg-slate-800/50 flex gap-3">
+                <button
+                    class="flex-1 h-12 rounded-lg font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-lg">close</span>
+                    বাতিল করুন
+                </button>
+                <button
+                    class="flex-[1.5] h-12 rounded-lg font-bold bg-primary text-white hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-lg">check_circle</span>
+                    সিলেক্ট করুন
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<!DOCTYPE html>
+
+<html dir="ltr" lang="bn">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>আজকের বাজারদর - লোকেশন সিলেক্ট করুন</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;family=Noto+Sans+Bengali:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#307e34",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#141e15",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "Noto Sans Bengali", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Public Sans', 'Noto Sans Bengali', sans-serif;
+        }
+
+        .modal-overlay {
+            background-color: rgba(20, 30, 21, 0.6);
+            backdrop-filter: blur(4px);
+        }
+
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23307e34' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.5rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex items-center justify-center font-display">
+    <!-- Background Content Simulation -->
+    <div class="fixed inset-0 z-0 overflow-hidden opacity-40 pointer-events-none">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="px-4 md:px-40 flex flex-1 justify-center py-5">
+                <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                    <header
+                        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 px-10 py-3">
+                        <div class="flex items-center gap-4 text-primary">
+                            <span class="material-symbols-outlined text-3xl">storefront</span>
+                            <h2
+                                class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em]">
+                                আজকের বাজারদর</h2>
+                        </div>
+                    </header>
+                    <div class="p-8 space-y-4">
+                        <div class="h-8 bg-primary/10 rounded w-1/3"></div>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="h-32 bg-primary/5 rounded-lg border border-primary/10"></div>
+                            <div class="h-32 bg-primary/5 rounded-lg border border-primary/10"></div>
+                            <div class="h-32 bg-primary/5 rounded-lg border border-primary/10"></div>
+                        </div>
+                        <div class="h-64 bg-primary/5 rounded-lg border border-primary/10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Location Selection Modal -->
+    <div class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div
+            class="bg-white dark:bg-slate-900 w-full max-w-[480px] rounded-xl shadow-2xl overflow-hidden border border-primary/10">
+            <!-- Modal Header -->
+            <div class="p-6 border-b border-primary/10">
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                        <span class="material-symbols-outlined">location_on</span>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-slate-900 dark:text-slate-100">আপনার লোকেশন সিলেক্ট করুন</h1>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">সঠিক বাজারদর দেখতে আপনার এলাকা নির্বাচন
+                            করুন</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Body -->
+            <div class="p-6 space-y-5">
+                <!-- Division Selection -->
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-lg text-primary">map</span>
+                        বিভাগ নির্বাচন করুন
+                    </label>
+                    <select
+                        class="w-full h-12 px-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all cursor-pointer">
+                        <option disabled="" selected="" value="">বিভাগ বেছে নিন</option>
+                        <option value="dhaka">ঢাকা</option>
+                        <option value="chattogram">চট্টগ্রাম</option>
+                        <option value="rajshahi">রাজশাহী</option>
+                        <option value="khulna">খুলনা</option>
+                        <option value="barishal">বরিশাল</option>
+                        <option value="sylhet">সিলেট</option>
+                        <option value="rangpur">রংপুর</option>
+                        <option value="mymensingh">ময়মনসিংহ</option>
+                    </select>
+                </div>
+                <!-- District Selection -->
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-lg text-primary">distance</span>
+                        জেলা নির্বাচন করুন
+                    </label>
+                    <select
+                        class="w-full h-12 px-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all cursor-pointer">
+                        <option disabled="" selected="" value="">জেলা বেছে নিন</option>
+                        <option value="1">ঢাকা সদর</option>
+                        <option value="2">গাজীপুর</option>
+                        <option value="3">নারায়ণগঞ্জ</option>
+                    </select>
+                </div>
+                <!-- Map Illustration Preview -->
+                <div class="relative w-full h-32 rounded-lg overflow-hidden border border-primary/10">
+                    <div class="absolute inset-0 bg-primary/5 flex items-center justify-center">
+                        <img alt="Map of Bangladesh location pointer" class="w-full h-full object-cover opacity-20"
+                            data-alt="Abstract map background with a location pin icon" data-location="Bangladesh"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6GEf3q0BhuWzcOXwZeyyDvEMTjJhV7BHA74Rzh3of61s0nzw4jc_V0qdZJzW3R0ePDI6yuJ-QBkMlJTaMXs4lHImHLwvlanTyM8OsfiJ9CRVKoziBhM4D45h81grDsW5bF0G50BmtPPf79lRdujsXzi66j24d2rJ_xViS6CwNuTMDopHUGAHysOjksyRXaC1ltUidYut5jq0_JF4-hGSDCXl6fxH0gmtkmM2We8zxcpEkP7Us8a_Xnth492ZaGnlwZE50W7oXq9lQ" />
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-4xl text-primary/40">explore</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Footer -->
+            <div class="p-6 bg-slate-50 dark:bg-slate-800/50 flex gap-3">
+                <button
+                    class="flex-1 h-12 rounded-lg font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-lg">close</span>
+                    বাতিল করুন
+                </button>
+                <button
+                    class="flex-[1.5] h-12 rounded-lg font-bold bg-primary text-white hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-lg">check_circle</span>
+                    সিলেক্ট করুন
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
