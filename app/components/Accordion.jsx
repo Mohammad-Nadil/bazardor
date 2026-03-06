@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import Container from "./Container";
 import { PiBowlFoodDuotone } from "react-icons/pi";
 import { FaAngleDown } from "react-icons/fa";
+import Link from "next/link";
 
 const Accordion = ({ des, title, icon, items }) => {
   const [open, setOpen] = useState(true);
@@ -44,7 +45,8 @@ const Accordion = ({ des, title, icon, items }) => {
             >
               <div className="p-5 pt-0  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-5">
                 {items.map((item, index) => (
-                  <div
+                  <Link
+                    href={"/more"}
                     key={index}
                     className="p-4 rounded-xl border border-slate-100 bg-slate-50/50 flex flex-col gap-3"
                   >
@@ -63,7 +65,7 @@ const Accordion = ({ des, title, icon, items }) => {
                         ৬৫ – ৭০ টাকা
                       </p>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>

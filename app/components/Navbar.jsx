@@ -1,16 +1,22 @@
+"use client";
 import React from "react";
 import Container from "./Container";
 import Image from "next/image";
 import logo from "@/public/gov-logo.png";
 import { IoLocationSharp } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
+import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { setShowModal } from "../features/locationSlice";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const location = useSelector((state) => state.location);
   return (
     <nav className="bg-white shadow-sm py-2 sm:py-4">
-      <Container >
+      <Container>
         <div className="flex row items-center justify-between pb-2 ">
-          <div className="flex items-center gap-2 lg:gap-4">
+          <Link href="/" className="flex items-center gap-2 lg:gap-4">
             <div className="flex items-center gap-2 xs:gap-3">
               <div className="size-8 xs:size-10 bg-primary rounded-lg flex items-center justify-center text-white">
                 <Image src={logo} alt="logo" />
@@ -25,7 +31,7 @@ const Navbar = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </Link>
           <div className="hidden md:flex flex-1 max-w-xl mx-4 lg:mx-8">
             <label className="relative w-full">
               <span className="absolute inset-y-0 right-3 flex items-center pl-3">
@@ -41,9 +47,12 @@ const Navbar = () => {
             </label>
           </div>
           <div className="flex items-center justify-end  gap-3">
-            <button className="flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-lg font-semibold text-xs xs:text-sm hover:bg-primary/20 transition-colors">
+            <button
+              onClick={() => dispatch(setShowModal(true))}
+              className="flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-lg font-semibold text-xs xs:text-sm hover:bg-primary/20 transition-colors"
+            >
               <IoLocationSharp />
-              <span>ঢাকা মহানগর</span>
+              <span>{location.district}</span>
             </button>
             <FaUserCircle className="hidden sm:block text-3xl text-primary" />
           </div>

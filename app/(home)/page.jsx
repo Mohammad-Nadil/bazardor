@@ -1,9 +1,11 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Heading from "../components/Heading";
 import Accordion from "../components/Accordion";
 import { PiBowlFoodDuotone } from "react-icons/pi";
 import { TbGasStation } from "react-icons/tb";
 import Contact from "../components/Contact";
+import Modal from "../components/Modal";
 
 const page = () => {
   let food = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];

@@ -16,7 +16,7 @@ const Footer = () => {
             >
               <Image src={logo} alt="logo" />
             </div>
-            <div cl>
+            <div >
               <p className="text-primary font-bold  text-lg sm:text-xl">
                 জাতীয় ভোক্তা-অধিকার সংরক্ষণ অধিদপ্তর
               </p>
