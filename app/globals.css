@@ -24,4 +24,5 @@
   --border-radius-lg: 0.5rem;
   --border-radius-xl: 0.75rem;
   --border-radius-full: 9999px;
+  --breakpoint-xs: 375px;
 }
