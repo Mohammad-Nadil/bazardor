@@ -8,9 +8,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html >
+    <html className="translated-ltr"
+ >
       <body
-        className={`font-public-sans bg-background antialiased`}
+        className=" font-public-sans! bg-background "
       >
         {children}
       </body>

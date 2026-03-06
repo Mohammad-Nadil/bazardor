@@ -1,18 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;900&amp;display=swap");
 @import "tailwindcss";
 
-/*
-  primary: "#2E7D32",
-  "background-light": "#f6f8f6",
-  "background-dark": "#141e15",
-  
-   borderRadius: {
-     DEFAULT: "0.25rem",
-     lg: "0.5rem",
-     xl: "0.75rem",
-     full: "9999px",
-   },
-  */
 
 @theme {
   --color-primary: #2e7d32;

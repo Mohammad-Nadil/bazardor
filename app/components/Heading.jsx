@@ -9,7 +9,7 @@ const Heading = () => {
   ];
   return (
     <section id="heading">
-      <Container className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4 py-8">
+      <Container className="pt-8 flex flex-col md:flex-row md:items-end justify-between gap-4 ">
         <div>
           <h2 className="text-xl xs:text-2xl sm:text-3xl font-black text-slate-900  mb-2">
             নিত্যপ্রয়োজনীয় পণ্যের তালিকা

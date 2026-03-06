@@ -7,20 +7,20 @@ import { FaUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
   return (
-    <nav className="bg-white shadow-sm">
-      <Container>
-        <div className="flex row items-center justify-between py-4">
+    <nav className="bg-white shadow-sm py-2 sm:py-4">
+      <Container >
+        <div className="flex row items-center justify-between pb-2 ">
           <div className="flex items-center gap-2 lg:gap-4">
-            <div className="flex items-center gap-3">
-              <div className="size-9 xs:size-10 bg-primary rounded-lg flex items-center justify-center text-white">
+            <div className="flex items-center gap-2 xs:gap-3">
+              <div className="size-8 xs:size-10 bg-primary rounded-lg flex items-center justify-center text-white">
                 <Image src={logo} alt="logo" />
               </div>
               <div>
-                <h1 className="text-xl font-bold leading-tight flex items-center gap-2 text-primary">
-                  <span className="hidden sm:block">আজকের</span>{" "}
+                <h1 className="text-lg xs:text-xl font-bold leading-tight flex items-center gap-2 text-primary">
+                  <span className="hidden sm:flex">আজকের</span>
                   <span>বাজারদর</span>
                 </h1>
-                <p className="text-[7px] xs:text-[8px] sm:text-xs text-slate-500 ">
+                <p className="text-[7px] xs:text-[8px] sm:text-xs text-slate-500 leading-tight ">
                   সর্বশেষ হালনাগাদ: <br className="xs:hidden" /> ২০ অক্টোবর ২০২৪
                 </p>
               </div>
