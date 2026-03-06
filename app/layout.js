@@ -1,3 +1,4 @@
+import LenisProvider from "./features/LenisProvider";
 import "./globals.css";
 import Providers from "./providers";
 
@@ -9,10 +10,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html className="translated-ltr">
-      <Providers>
-        <body className=" font-public-sans! bg-background ">{children}</body>
-      </Providers>
+    <html className="">
+      <LenisProvider>
+        <Providers>
+          <body className=" font-public-sans! bg-background ">{children}</body>
+        </Providers>
+      </LenisProvider>
     </html>
   );
 }
