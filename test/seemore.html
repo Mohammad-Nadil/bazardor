@@ -1,0 +1,470 @@
+<html lang="bn">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ajker BazarDor - Category Items</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2f7f33",
+              "background-light": "#f6f8f6",
+              "background-dark": "#141e15",
+            },
+            fontFamily: {
+              display: ["Public Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Public Sans", sans-serif;
+      }
+    </style>
+  </head>
+  <body className="bg-background-light dark:bg-background-dark font-display">
+    <div
+      className="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden"
+    >
+      <!-- Top Navigation Bar -->
+      <header
+        className="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 bg-white dark:bg-background-dark px-10 py-3 sticky top-0 z-50"
+      >
+        <div className="flex items-center gap-8">
+          <div
+            className="flex items-center gap-4 text-slate-900 dark:text-slate-100"
+          >
+            <div
+              className="size-8 text-primary flex items-center justify-center"
+            >
+              <span className="material-symbols-outlined text-3xl"
+                >storefront</span
+              >
+            </div>
+            <h2
+              className="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em]"
+            >
+              Ajker BazarDor
+            </h2>
+          </div>
+          <nav className="hidden md:flex items-center gap-9">
+            <a
+              className="text-slate-900 dark:text-slate-100 text-sm font-medium hover:text-primary transition-colors"
+              href="#"
+              >হোম</a
+            >
+            <a
+              className="text-primary text-sm font-bold border-b-2 border-primary"
+              href="#"
+              >বাজারদর</a
+            >
+            <a
+              className="text-slate-900 dark:text-slate-100 text-sm font-medium hover:text-primary transition-colors"
+              href="#"
+              >প্রতিবেদন</a
+            >
+            <a
+              className="text-slate-900 dark:text-slate-100 text-sm font-medium hover:text-primary transition-colors"
+              href="#"
+              >যোগাযোগ</a
+            >
+          </nav>
+        </div>
+        <div className="flex flex-1 justify-end gap-4 items-center">
+          <button
+            className="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold transition-opacity hover:opacity-90"
+          >
+            <span className="truncate">লগইন</span>
+          </button>
+          <div
+            className="bg-primary/10 flex items-center justify-center rounded-full size-10 text-primary overflow-hidden border border-primary/20"
+          >
+            <span className="material-symbols-outlined">person</span>
+          </div>
+        </div>
+      </header>
+      <main className="flex-1 flex flex-col items-center">
+        <div
+          className="layout-content-container flex flex-col w-full max-w-[1000px] px-6 py-8 gap-6"
+        >
+          <!-- Breadcrumb -->
+          <div
+            className="flex items-center gap-2 text-primary/70 text-sm font-medium"
+          >
+            <a className="hover:text-primary transition-colors" href="#">হোম</a>
+            <span className="material-symbols-outlined text-xs"
+              >chevron_right</span
+            >
+            <span className="text-slate-900 dark:text-slate-100"
+              >খাদ্যসামগ্রী</span
+            >
+          </div>
+          <!-- Page Header -->
+          <div
+            className="flex flex-col md:flex-row md:items-end justify-between gap-4"
+          >
+            <div className="flex flex-col gap-1">
+              <h1
+                className="text-slate-900 dark:text-slate-100 text-4xl font-black leading-tight tracking-tight"
+              >
+                খাদ্যসামগ্রী
+              </h1>
+              <p className="text-primary text-lg font-medium">আজকের বাজারদর</p>
+            </div>
+            <button
+              className="flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary font-bold rounded-lg hover:bg-primary/20 transition-all border border-primary/20"
+            >
+              <span className="material-symbols-outlined text-sm"
+                >arrow_back</span
+              >
+              <span>পিছনে যান</span>
+            </button>
+          </div>
+          <!-- Filters Area -->
+          <div
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-white dark:bg-slate-800/50 p-4 rounded-xl shadow-sm border border-primary/5"
+          >
+            <div className="md:col-span-2 relative">
+              <div
+                className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-primary/60"
+              >
+                <span className="material-symbols-outlined">search</span>
+              </div>
+              <input
+                className="w-full pl-10 pr-4 py-3 rounded-lg border border-primary/10 bg-background-light dark:bg-background-dark focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-slate-900 dark:text-slate-100"
+                placeholder="খাদ্যসামগ্রী খুঁজুন (যেমন: চাল, ডাল...)"
+                type="text"
+              />
+            </div>
+            <div className="relative">
+              <select
+                className="w-full px-4 py-3 rounded-lg border border-primary/10 bg-background-light dark:bg-background-dark focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none appearance-none text-slate-900 dark:text-slate-100"
+              >
+                <option value="low-high">মূল্য: কম থেকে বেশি</option>
+                <option value="high-low">মূল্য: বেশি থেকে কম</option>
+                <option value="newest">নতুন তালিকাভুক্ত</option>
+              </select>
+              <div
+                className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-primary/60"
+              >
+                <span className="material-symbols-outlined">expand_more</span>
+              </div>
+            </div>
+          </div>
+          <!-- Items List -->
+          <div className="flex flex-col gap-3">
+            <!-- Card 1 -->
+            <div
+              className="flex flex-col md:flex-row items-center justify-between p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow"
+            >
+              <div className="flex items-center gap-4 w-full md:w-auto">
+                <div
+                  className="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary"
+                >
+                  <span className="material-symbols-outlined"
+                    >bakery_dining</span
+                  >
+                </div>
+                <div>
+                  <h3
+                    className="text-lg font-bold text-slate-900 dark:text-slate-100"
+                  >
+                    চাল সরু - নাজির/মিনিকেট
+                  </h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    প্রতি কেজি
+                  </p>
+                </div>
+              </div>
+              <div
+                className="flex flex-row md:flex-col items-center md:items-end justify-between w-full md:w-auto mt-4 md:mt-0 pt-4 md:pt-0 border-t md:border-t-0 border-slate-100 dark:border-slate-700"
+              >
+                <span
+                  className="text-2xl font-black text-primary tracking-tight"
+                  >৮০ - ৮৫ টাকা</span
+                >
+                <div
+                  className="flex items-center gap-1 text-[10px] text-slate-400 dark:text-slate-500 mt-1 uppercase font-bold tracking-wider"
+                >
+                  <span className="material-symbols-outlined text-[12px]"
+                    >schedule</span
+                  >
+                  সর্বশেষ আপডেট: ৩ ঘণ্টা আগে
+                </div>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div
+              className="flex flex-col md:flex-row items-center justify-between p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow"
+            >
+              <div className="flex items-center gap-4 w-full md:w-auto">
+                <div
+                  className="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary"
+                >
+                  <span className="material-symbols-outlined"
+                    >bakery_dining</span
+                  >
+                </div>
+                <div>
+                  <h3
+                    className="text-lg font-bold text-slate-900 dark:text-slate-100"
+                  >
+                    চাল মাঝারি - পাইজাম/লতা
+                  </h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    প্রতি কেজি
+                  </p>
+                </div>
+              </div>
+              <div
+                className="flex flex-row md:flex-col items-center md:items-end justify-between w-full md:w-auto mt-4 md:mt-0 pt-4 md:pt-0 border-t md:border-t-0 border-slate-100 dark:border-slate-700"
+              >
+                <span
+                  className="text-2xl font-black text-primary tracking-tight"
+                  >৬০ - ৬৫ টাকা</span
+                >
+                <div
+                  className="flex items-center gap-1 text-[10px] text-slate-400 dark:text-slate-500 mt-1 uppercase font-bold tracking-wider"
+                >
+                  <span className="material-symbols-outlined text-[12px]"
+                    >schedule</span
+                  >
+                  সর্বশেষ আপডেট: ৫ ঘণ্টা আগে
+                </div>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div
+              className="flex flex-col md:flex-row items-center justify-between p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow"
+            >
+              <div className="flex items-center gap-4 w-full md:w-auto">
+                <div
+                  className="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary"
+                >
+                  <span className="material-symbols-outlined">liquor</span>
+                </div>
+                <div>
+                  <h3
+                    className="text-lg font-bold text-slate-900 dark:text-slate-100"
+                  >
+                    সয়াবিন তেল (লুজ)
+                  </h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    প্রতি লিটার
+                  </p>
+                </div>
+              </div>
+              <div
+                className="flex flex-row md:flex-col items-center md:items-end justify-between w-full md:w-auto mt-4 md:mt-0 pt-4 md:pt-0 border-t md:border-t-0 border-slate-100 dark:border-slate-700"
+              >
+                <span
+                  className="text-2xl font-black text-primary tracking-tight"
+                  >১৫০ - ১৫৫ টাকা</span
+                >
+                <div
+                  className="flex items-center gap-1 text-[10px] text-slate-400 dark:text-slate-500 mt-1 uppercase font-bold tracking-wider"
+                >
+                  <span className="material-symbols-outlined text-[12px]"
+                    >schedule</span
+                  >
+                  সর্বশেষ আপডেট: ২ ঘণ্টা আগে
+                </div>
+              </div>
+            </div>
+            <!-- Card 4 -->
+            <div
+              className="flex flex-col md:flex-row items-center justify-between p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow"
+            >
+              <div className="flex items-center gap-4 w-full md:w-auto">
+                <div
+                  className="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary"
+                >
+                  <span className="material-symbols-outlined">nutrition</span>
+                </div>
+                <div>
+                  <h3
+                    className="text-lg font-bold text-slate-900 dark:text-slate-100"
+                  >
+                    মসুর ডাল (উন্নত মানের)
+                  </h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    প্রতি কেজি
+                  </p>
+                </div>
+              </div>
+              <div
+                className="flex flex-row md:flex-col items-center md:items-end justify-between w-full md:w-auto mt-4 md:mt-0 pt-4 md:pt-0 border-t md:border-t-0 border-slate-100 dark:border-slate-700"
+              >
+                <span
+                  className="text-2xl font-black text-primary tracking-tight"
+                  >১৩০ - ১৪০ টাকা</span
+                >
+                <div
+                  className="flex items-center gap-1 text-[10px] text-slate-400 dark:text-slate-500 mt-1 uppercase font-bold tracking-wider"
+                >
+                  <span className="material-symbols-outlined text-[12px]"
+                    >schedule</span
+                  >
+                  সর্বশেষ আপডেট: ৪ ঘণ্টা আগে
+                </div>
+              </div>
+            </div>
+            <!-- Card 5 -->
+            <div
+              className="flex flex-col md:flex-row items-center justify-between p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow"
+            >
+              <div className="flex items-center gap-4 w-full md:w-auto">
+                <div
+                  className="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary"
+                >
+                  <span className="material-symbols-outlined">egg</span>
+                </div>
+                <div>
+                  <h3
+                    className="text-lg font-bold text-slate-900 dark:text-slate-100"
+                  >
+                    ডিম (ফার্মের মুরগি)
+                  </h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    প্রতি হালি (৪টি)
+                  </p>
+                </div>
+              </div>
+              <div
+                className="flex flex-row md:flex-col items-center md:items-end justify-between w-full md:w-auto mt-4 md:mt-0 pt-4 md:pt-0 border-t md:border-t-0 border-slate-100 dark:border-slate-700"
+              >
+                <span
+                  className="text-2xl font-black text-primary tracking-tight"
+                  >৪৮ - ৫২ টাকা</span
+                >
+                <div
+                  className="flex items-center gap-1 text-[10px] text-slate-400 dark:text-slate-500 mt-1 uppercase font-bold tracking-wider"
+                >
+                  <span className="material-symbols-outlined text-[12px]"
+                    >schedule</span
+                  >
+                  সর্বশেষ আপডেট: ১ দিন আগে
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Pagination -->
+          <div className="flex items-center justify-center gap-2 mt-8 py-4">
+            <button
+              className="size-10 flex items-center justify-center rounded-lg border border-primary/10 bg-white text-slate-600 hover:bg-primary/5"
+            >
+              <span className="material-symbols-outlined">chevron_left</span>
+            </button>
+            <button
+              className="size-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold"
+            >
+              ১
+            </button>
+            <button
+              className="size-10 flex items-center justify-center rounded-lg border border-primary/10 bg-white text-slate-600 hover:bg-primary/5"
+            >
+              ২
+            </button>
+            <button
+              className="size-10 flex items-center justify-center rounded-lg border border-primary/10 bg-white text-slate-600 hover:bg-primary/5"
+            >
+              ৩
+            </button>
+            <span className="px-2 text-slate-400">...</span>
+            <button
+              className="size-10 flex items-center justify-center rounded-lg border border-primary/10 bg-white text-slate-600 hover:bg-primary/5"
+            >
+              <span className="material-symbols-outlined">chevron_right</span>
+            </button>
+          </div>
+        </div>
+      </main>
+      <!-- Footer -->
+      <footer
+        className="bg-white dark:bg-background-dark border-t border-primary/10 py-12 px-10"
+      >
+        <div
+          className="max-w-[1000px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12"
+        >
+          <div className="flex flex-col gap-4">
+            <div
+              className="flex items-center gap-3 text-slate-900 dark:text-slate-100"
+            >
+              <div className="size-6 text-primary">
+                <span className="material-symbols-outlined text-2xl"
+                  >storefront</span
+                >
+              </div>
+              <h3 className="font-bold text-lg">Ajker BazarDor</h3>
+            </div>
+            <p
+              className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed"
+            >
+              বাংলাদেশ সরকারের বাজারদর তথ্য ব্যবস্থা। প্রতিদিনের নির্ভরযোগ্য
+              বাজারদরের জন্য আমাদের সাথেই থাকুন।
+            </p>
+          </div>
+          <div className="flex flex-col gap-4">
+            <h4 className="font-bold text-slate-900 dark:text-slate-100">
+              লিঙ্কসমূহ
+            </h4>
+            <nav
+              className="flex flex-col gap-2 text-sm text-slate-600 dark:text-slate-400"
+            >
+              <a className="hover:text-primary transition-colors" href="#"
+                >আমাদের সম্পর্কে</a
+              >
+              <a className="hover:text-primary transition-colors" href="#"
+                >ব্যবহার নির্দেশিকা</a
+              >
+              <a className="hover:text-primary transition-colors" href="#"
+                >প্রাইভেসি পলিসি</a
+              >
+            </nav>
+          </div>
+          <div className="flex flex-col gap-4">
+            <h4 className="font-bold text-slate-900 dark:text-slate-100">
+              যোগাযোগ
+            </h4>
+            <p className="text-sm text-slate-600 dark:text-slate-400">
+              ইমেইল: info@bazardor.gov.bd
+            </p>
+            <p className="text-sm text-slate-600 dark:text-slate-400">
+              ফোন: +৮৮০ ২-১২৩৪৫৬
+            </p>
+          </div>
+        </div>
+        <div
+          className="max-w-[1000px] mx-auto mt-12 pt-8 border-t border-slate-100 dark:border-slate-800 text-center text-xs text-slate-400"
+        >
+          © ২০২৪ Ajker BazarDor। সর্বস্বত্ব সংরক্ষিত।
+        </div>
+      </footer>
+    </div>
+
+    ```
+  </body>
+</html>

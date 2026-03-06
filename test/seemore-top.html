@@ -1,0 +1,391 @@
+<html lang="bn">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#13ec25",
+              "gov-green": "#006a4e",
+              "gov-red": "#f42a41",
+              "background-light": "#f6f8f6",
+              "background-dark": "#102212",
+            },
+            fontFamily: {
+              display: ["Public Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <title>চাল (Rice) - বাজার দর</title>
+  </head>
+  <body
+    className="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen"
+  >
+    <!-- Top Navigation Bar -->
+    <header
+      className="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-gov-green/10 shadow-sm"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          <div className="flex items-center gap-4">
+            <div
+              className="w-10 h-10 bg-gov-green rounded-full flex items-center justify-center text-white"
+            >
+              <span className="material-symbols-outlined">agriculture</span>
+            </div>
+            <div>
+              <h1 className="text-gov-green font-bold text-lg leading-tight">
+                কৃষি বিপণন অধিদপ্তর
+              </h1>
+              <p className="text-xs text-slate-500">
+                গণপ্রজাতন্ত্রী বাংলাদেশ সরকার
+              </p>
+            </div>
+          </div>
+          <nav className="hidden md:flex space-x-8">
+            <a
+              className="text-slate-600 hover:text-gov-green font-medium"
+              href="#"
+              >হোম</a
+            >
+            <a
+              className="text-gov-green border-b-2 border-gov-green font-bold"
+              href="#"
+              >পণ্য তালিকা</a
+            >
+            <a
+              className="text-slate-600 hover:text-gov-green font-medium"
+              href="#"
+              >বাজার বিশ্লেষণ</a
+            >
+            <a
+              className="text-slate-600 hover:text-gov-green font-medium"
+              href="#"
+              >যোগাযোগ</a
+            >
+          </nav>
+          <div className="flex items-center gap-4">
+            <button
+              className="p-2 text-slate-500 hover:bg-slate-100 rounded-full"
+            >
+              <span className="material-symbols-outlined">notifications</span>
+            </button>
+            <button
+              className="bg-primary text-slate-900 font-bold px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors"
+            >
+              লগইন
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main className="max-w-5xl mx-auto px-4 py-8">
+      <!-- Breadcrumb & Back Button -->
+      <div className="flex items-center justify-between mb-8">
+        <nav className="flex items-center gap-2 text-sm text-slate-500">
+          <a className="hover:text-gov-green" href="#">হোম</a>
+          <span className="material-symbols-outlined text-xs"
+            >chevron_right</span
+          >
+          <a className="hover:text-gov-green" href="#">পণ্য তালিকা</a>
+          <span className="material-symbols-outlined text-xs"
+            >chevron_right</span
+          >
+          <span className="text-gov-green font-semibold">চাল (Rice)</span>
+        </nav>
+        <button
+          className="flex items-center gap-2 text-gov-green font-semibold hover:bg-gov-green/5 px-3 py-1.5 rounded-lg border border-gov-green/20 transition-all"
+        >
+          <span className="material-symbols-outlined text-sm">arrow_back</span>
+          ফিরে যান
+        </button>
+      </div>
+      <!-- Title Section -->
+      <div className="mb-10 text-center md:text-left">
+        <h2 className="text-4xl font-black text-slate-900 dark:text-white mb-2">
+          চাল (Rice)
+        </h2>
+        <div
+          className="flex items-center justify-center md:justify-start gap-2"
+        >
+          <span className="relative flex h-3 w-3">
+            <span
+              className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"
+            ></span>
+            <span
+              className="relative inline-flex rounded-full h-3 w-3 bg-primary"
+            ></span>
+          </span>
+          <p className="text-gov-green font-medium">
+            আজকের বাজারদর (Today's Market Price)
+          </p>
+        </div>
+      </div>
+      <!-- Filters Section -->
+      <div
+        className="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 mb-8"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="md:col-span-2 relative">
+            <span
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined"
+              >search</span
+            >
+            <input
+              className="w-full pl-10 pr-4 py-3 rounded-lg border-slate-200 dark:border-slate-600 focus:ring-primary focus:border-primary dark:bg-slate-700"
+              placeholder="এই ক্যাটাগরিতে পণ্য খুঁজুন..."
+              type="text"
+            />
+          </div>
+          <div className="relative">
+            <span
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined"
+              >sort</span
+            >
+            <select
+              className="w-full pl-10 pr-4 py-3 rounded-lg border-slate-200 dark:border-slate-600 focus:ring-primary focus:border-primary dark:bg-slate-700 appearance-none"
+            >
+              <option>মূল্য (নিম্ন থেকে উচ্চ)</option>
+              <option>মূল্য (উচ্চ থেকে নিম্ন)</option>
+              <option>জনপ্রিয়তা</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <!-- List Section -->
+      <div className="space-y-4">
+        <!-- Item Card 1 -->
+        <div
+          className="group bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-gov-green/30 transition-all"
+        >
+          <div
+            className="flex flex-col md:flex-row md:items-center justify-between gap-4"
+          >
+            <div className="flex items-center gap-4">
+              <div
+                className="w-16 h-16 rounded-lg bg-background-light dark:bg-slate-700 flex items-center justify-center overflow-hidden"
+              >
+                <img
+                  className="w-full h-full object-cover"
+                  data-alt="Close up of raw white rice grains"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeBlalhuNHyyTMQYzUkHevM7NpqyXNj7oCHuMsqVum7SC4hUfqmw1xDtQKvLlgEKsltpTS_9hg1yn0ugx9jSJ5Nva7MzxIEOtZx6bc392WOepJMc6bRwSXZlTUFObfaED1PKdawONwCHa6nhPLF490mfCAit_UpqgfQ1avW9nAcoXtqRrmzZRdT-E5Ma_tBb7r1Iwgvuv5DxyuFbGC21hO0QVRcgq0kXhJgkL3T07Lb8kqa0w-_hSdAFgaK45-yrxkR1mqecoPJUMS"
+                />
+              </div>
+              <div>
+                <h3
+                  className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-gov-green transition-colors"
+                >
+                  চাল সরু - নাজির/মিনিকেট
+                </h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  প্রতি কেজি (Per KG)
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col md:items-end">
+              <div className="text-2xl font-black text-gov-green">
+                ৳ ৮০ - ৮৫
+              </div>
+              <div
+                className="flex items-center gap-1 text-xs text-slate-400 mt-1"
+              >
+                <span className="material-symbols-outlined text-xs"
+                  >schedule</span
+                >
+                সর্বশেষ আপডেট: ১০:৩০ AM, আজ
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Item Card 2 -->
+        <div
+          className="group bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-gov-green/30 transition-all"
+        >
+          <div
+            className="flex flex-col md:flex-row md:items-center justify-between gap-4"
+          >
+            <div className="flex items-center gap-4">
+              <div
+                className="w-16 h-16 rounded-lg bg-background-light dark:bg-slate-700 flex items-center justify-center overflow-hidden"
+              >
+                <img
+                  className="w-full h-full object-cover"
+                  data-alt="Burlap sack filled with brown rice"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaCe6euY_C3zCsouG6-OE5Ea_7CIuS65nf_T84JmmD6LYWiymVEF5brSJBh75Bqh3uBSgUzlEr4ePIkan6XaslEIUeLp38LXH3BHhuUu0heyZR9KK7MF8Met7WCIPsoquHWt8dvkQn7bOaKgetsSzOWbO7EyV07aB-iqv8uuzhvAiBqKZjivRQExGyWDJOYAWzTe1GzvHZdAHiwpVfI_iJjIhDf2prE1sR_s8p2Y2BA0KAHi5lmGOTX6AV3aeUj9JDF5gCIzx21CMr"
+                />
+              </div>
+              <div>
+                <h3
+                  className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-gov-green transition-colors"
+                >
+                  চাল মাঝারি - পাইজাম/লতা
+                </h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  প্রতি কেজি (Per KG)
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col md:items-end">
+              <div className="text-2xl font-black text-gov-green">
+                ৳ ৬৮ - ৭০
+              </div>
+              <div
+                className="flex items-center gap-1 text-xs text-slate-400 mt-1"
+              >
+                <span className="material-symbols-outlined text-xs"
+                  >schedule</span
+                >
+                সর্বশেষ আপডেট: ১০:৩০ AM, আজ
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Item Card 3 -->
+        <div
+          className="group bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-gov-green/30 transition-all"
+        >
+          <div
+            className="flex flex-col md:flex-row md:items-center justify-between gap-4"
+          >
+            <div className="flex items-center gap-4">
+              <div
+                className="w-16 h-16 rounded-lg bg-background-light dark:bg-slate-700 flex items-center justify-center overflow-hidden"
+              >
+                <img
+                  className="w-full h-full object-cover"
+                  data-alt="Heap of raw coarse rice grains"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXUfp_2gAjRA2LcohE1Iq5F2xkmwAl59U8j3UYI6v5eBJuYTHmShPgXe1U8zhWbBWldikBn0rQlYBdtfDQ19cRYT37hlMsTxJhJllWYtPDo_LWDVVeRGoL2wbLK5lM1zZLQAS9VQg-dMiCU2KUe2p51G4Uu1xaDMh7B_kf0CcxT7rlNOwVHXNLycHWOVX9DunvM6tH_3NRWjfkO_ht5ijbbwj8-z18OzmPyViJxrx6nL00SZBvm85gPZgWgyYbgzWOQfaOzhwGyQHX"
+                />
+              </div>
+              <div>
+                <h3
+                  className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-gov-green transition-colors"
+                >
+                  চাল মোটা - স্বর্ণা/চায়না
+                </h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  প্রতি কেজি (Per KG)
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col md:items-end">
+              <div className="text-2xl font-black text-gov-green">
+                ৳ ৫২ - ৫৫
+              </div>
+              <div
+                className="flex items-center gap-1 text-xs text-slate-400 mt-1"
+              >
+                <span className="material-symbols-outlined text-xs"
+                  >schedule</span
+                >
+                সর্বশেষ আপডেট: ১০:৩০ AM, আজ
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Item Card 4 -->
+        <div
+          className="group bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-gov-green/30 transition-all"
+        >
+          <div
+            className="flex flex-col md:flex-row md:items-center justify-between gap-4"
+          >
+            <div className="flex items-center gap-4">
+              <div
+                className="w-16 h-16 rounded-lg bg-background-light dark:bg-slate-700 flex items-center justify-center overflow-hidden"
+              >
+                <img
+                  className="w-full h-full object-cover"
+                  data-alt="Aromatic basmati rice with spices"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiEy_1gYMb-W0rRb_wSeXnfxWGcgJ7_0NGJ5YCrn8OFJdWPqUEO8PmkkvQRVui4_Iq0RscKQ24ScrffSZ4qcqMHqUjDPl6suhs2BYeX0Ld4N97jVjfct3tvz9qWDzlXM5wSFgMRpXULF_Y4OCwCB8MWMz_WsEnVotNxB-KqmPoW34jwRt80fm8Ef74sN2eddgVPrWSa6ZhTMJq2cRmzxmSVn9MdzjN7HWjz3mOnPAPXK3_iWlkgtr5iCDXDXUKTQYVF6ggBEiu544l"
+                />
+              </div>
+              <div>
+                <h3
+                  className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-gov-green transition-colors"
+                >
+                  সুগন্ধি চাল - চিনিগুড়া
+                </h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  প্রতি কেজি (Per KG)
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col md:items-end">
+              <div className="text-2xl font-black text-gov-green">
+                ৳ ১৪৫ - ১৫০
+              </div>
+              <div
+                className="flex items-center gap-1 text-xs text-slate-400 mt-1"
+              >
+                <span className="material-symbols-outlined text-xs"
+                  >schedule</span
+                >
+                সর্বশেষ আপডেট: ১০:৩০ AM, আজ
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Disclaimer Section -->
+      <div
+        className="mt-12 p-6 bg-gov-red/5 rounded-xl border border-gov-red/10 text-center"
+      >
+        <p className="text-sm text-slate-600 dark:text-slate-400 italic">
+          * প্রদর্শিত বাজার দর ঢাকা মহানগরীর বিভিন্ন খুচরা বাজারের সংগৃহীত দরের
+          গড়। স্থানীয় পর্যায়ে দর ভিন্ন হতে পারে।
+        </p>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer
+      className="mt-20 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-10"
+    >
+      <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className="flex justify-center gap-8 mb-6">
+          <img
+            className="h-12 w-12"
+            data-alt="National Emblem of Bangladesh"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrscZMPlYpCp2Zf1C-l5ZXZJSAM-lxLPXMFQ7BoJSW_pAt5ybTqGiw-B0nN4OiVfKPNav30z2fuCFnQtOzlZRPsv47bYK7F_pC0x5FNh5PcycEMjAw1C0LtC9mabLRSlRYdI8hMrj4JX9TK0UP2qLKhjvKzGnesVCANGkOZLMa36gqebm8Ou5WDOvi7jv8AsGL-KeeHxiombdv_g9PnJsOaBO7J84AdUdk4qOQGnQKGPBBvngK7nzt3T7cqISDtbin7xqyoj7iUwPP"
+          />
+        </div>
+        <p className="text-slate-500 text-sm">
+          © ২০২৪ কৃষি বিপণন অধিদপ্তর, বাণিজ্য মন্ত্রণালয়
+        </p>
+        <div className="mt-4 flex justify-center gap-4 text-xs text-slate-400">
+          <a className="hover:text-gov-green" href="#">গোপনীয়তা নীতি</a>
+          <span>|</span>
+          <a className="hover:text-gov-green" href="#">ব্যবহারের শর্তাবলী</a>
+          <span>|</span>
+          <a className="hover:text-gov-green" href="#">হেল্পডেস্ক</a>
+        </div>
+      </div>
+    </footer>
+
+    ```
+  </body>
+</html>

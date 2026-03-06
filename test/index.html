@@ -1,357 +1,453 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="bn">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>আজকের বাজারদর - ডিজিটাল বাজার মনিটরিং</title>
+    <title></title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;900&amp;display=swap"
-        rel="stylesheet" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
     <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#2E7D32",
-                        "background-light": "#f6f8f6",
-                        "background-dark": "#141e15",
-                    },
-                    fontFamily: {
-                        "display": ["Public Sans", "Noto Sans Bengali", "sans-serif"]
-                    },
-                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
-                },
-            },
-        }
-    </script>
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+
     <style>
-        body {
-            font-family: 'Public Sans', sans-serif;
-        }
+      body {
+        font-family: "Public Sans", sans-serif;
+      }
     </style>
-</head>
+  </head>
 
-<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
-    <div class="layout-container flex h-full grow flex-col">
-        <!-- Header Section -->
-        <header class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-primary/10 shadow-sm">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between h-20">
-                    <div class="flex items-center gap-4">
-                        <button class="p-2 hover:bg-primary/10 rounded-lg lg:hidden">
-                            <span class="material-symbols-outlined text-primary">menu</span>
-                        </button>
-                        <div class="flex items-center gap-3">
-                            <div class="size-10 bg-primary rounded-lg flex items-center justify-center text-white">
-                                <span class="material-symbols-outlined">shopping_cart</span>
-                            </div>
-                            <div>
-                                <h1 class="text-xl font-bold leading-tight text-primary">আজকের বাজারদর</h1>
-                                <p class="text-xs text-slate-500 dark:text-slate-400">সর্বশেষ হালনাগাদ: ২০ অক্টোবর ২০২৪
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hidden md:flex flex-1 max-w-md mx-8">
-                        <label class="relative w-full">
-                            <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                                <span class="material-symbols-outlined text-slate-400">search</span>
-                            </span>
-                            <input
-                                class="block w-full pl-10 pr-3 py-2 border border-slate-200 dark:border-slate-700 rounded-lg bg-slate-50 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm"
-                                placeholder="পণ্য অনুসন্ধান করুন..." type="text" />
-                        </label>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <button
-                            class="flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-lg font-semibold text-sm hover:bg-primary/20 transition-colors">
-                            <span class="material-symbols-outlined text-sm">location_on</span>
-                            <span>ঢাকা মহানগর</span>
-                        </button>
-                        <div class="size-10 rounded-full border-2 border-primary/20 p-0.5">
-                            <div class="w-full h-full rounded-full bg-center bg-cover"
-                                data-alt="User profile avatar placeholder"
-                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCgXnDg-4N4fNyKclI9L4A7kQFDc4Wx9kxtuPS8vn53txpCyIFgomodMa2X0q0RuBjXElri4mBitgZsoLGEtps1KF4zeHgRgQW7FW9RgcLjfA1lIYuLDa5h6sYAvDo-ric2u88cNjftifGkeAQY9-FfKjyktMZ2X-1qEqId02dpTR2XvcR3-fowbcRn9CI1yTa5i19JAZkLdxQGVvbzqDWU1yU4wTYgX9EgzFBSfdSF8ygpOc70zqcCvehilm6jW8KfGIPVkJLDfE6U')">
-                            </div>
-                        </div>
-                    </div>
+  <body
+    className="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100"
+  >
+    <div className="layout-container flex h-full grow flex-col">
+      <!-- Header Section -->
+      <header
+        className="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-primary/10 shadow-sm"
+      ></header>
+      <main className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Hero Info -->
+        <div
+          className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4"
+        >
+          <div>
+            <h2
+              className="text-3xl font-black text-slate-900 dark:text-white mb-2"
+            >
+              নিত্যপ্রয়োজনীয় পণ্যের তালিকা
+            </h2>
+            <p className="text-slate-600 dark:text-slate-400">
+              ভোক্তা অধিকার রক্ষায় সঠিক দাম জানুন
+            </p>
+          </div>
+          <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0">
+            <button
+              className="whitespace-nowrap px-4 py-2 rounded-full bg-primary text-white text-sm font-medium"
+            >
+              সবগুলো
+            </button>
+            <button
+              className="whitespace-nowrap px-4 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 text-sm font-medium hover:border-primary"
+            >
+              জনপ্রিয়
+            </button>
+            <button
+              className="whitespace-nowrap px-4 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 text-sm font-medium hover:border-primary"
+            >
+              হ্রাসকৃত
+            </button>
+          </div>
+        </div>
+        <!-- Categories Accordion Container -->
+        <div className="space-y-4">
+          <!-- Food Items Category -->
+          <details
+            className="group bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden"
+            open=""
+          >
+            <summary
+              className="flex cursor-pointer items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
+            >
+              <div className="flex items-center gap-4">
+                <div
+                  className="size-10 rounded-lg bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-orange-600 dark:text-orange-400"
+                >
+                  <span className="material-symbols-outlined"
+                    >bakery_dining</span
+                  >
                 </div>
-            </div>
-        </header>
-        <main class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
-            <!-- Hero Info -->
-            <div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div>
-                    <h2 class="text-3xl font-black text-slate-900 dark:text-white mb-2">নিত্যপ্রয়োজনীয় পণ্যের তালিকা
-                    </h2>
-                    <p class="text-slate-600 dark:text-slate-400">ভোক্তা অধিকার রক্ষায় সঠিক দাম জানুন</p>
+                  <h3 className="font-bold text-lg">
+                    খাদ্যসামগ্রী (Food items)
+                  </h3>
+                  <p className="text-xs text-slate-500">চাল, ডাল, আটা ও চিনি</p>
                 </div>
-                <div class="flex gap-2 overflow-x-auto pb-2 md:pb-0">
-                    <button
-                        class="whitespace-nowrap px-4 py-2 rounded-full bg-primary text-white text-sm font-medium">সবগুলো</button>
-                    <button
-                        class="whitespace-nowrap px-4 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 text-sm font-medium hover:border-primary">জনপ্রিয়</button>
-                    <button
-                        class="whitespace-nowrap px-4 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 text-sm font-medium hover:border-primary">হ্রাসকৃত</button>
-                </div>
-            </div>
-            <!-- Categories Accordion Container -->
-            <div class="space-y-4">
-                <!-- Food Items Category -->
-                <details
-                    class="group bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden"
-                    open="">
-                    <summary
-                        class="flex cursor-pointer items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="size-10 rounded-lg bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-orange-600 dark:text-orange-400">
-                                <span class="material-symbols-outlined">bakery_dining</span>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-lg">খাদ্যসামগ্রী (Food items)</h3>
-                                <p class="text-xs text-slate-500">চাল, ডাল, আটা ও চিনি</p>
-                            </div>
-                        </div>
-                        <span
-                            class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
-                    </summary>
-                    <div class="p-5 pt-0 border-t border-slate-100 dark:border-slate-800">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
-                            <!-- Item Card -->
-                            <div
-                                class="p-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 flex flex-col gap-3">
-                                <div class="w-full h-32 bg-center bg-cover rounded-lg"
-                                    data-alt="High quality long grain rice in a bowl"
-                                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC-kKKKAXy_C0tsb--SxykzAvOluF-6FKUxWT456bwvrxA6iZgGVhM9WnuP-PSBKqdBdfxhklKlMzQqXeTSb3t4358un_94Ch_ojdPo34HB-vwANjcbw7d2Y9UAffG0x8uLzimr4zofWgXrF_zCLk0V0rFCjvvYMatlRVqkX40k6EPntnTXAyECsdrc1W_12e_f9lfQKUr4cATQK0GhdI4oVPyI67qnHmDXi3eY4NWSDfKkwLX-dM1_-OByWnBbLz4DTGyBN1T_TxRA')">
-                                </div>
-                                <div>
-                                    <p class="font-bold text-slate-900 dark:text-white">চাল সরু</p>
-                                    <p class="text-xs text-slate-500">প্রতি কেজি</p>
-                                    <p class="text-xl font-bold text-primary mt-1">৬৫ – ৭০ টাকা</p>
-                                </div>
-                            </div>
-                            <div
-                                class="p-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 flex flex-col gap-3">
-                                <div class="w-full h-32 bg-center bg-cover rounded-lg"
-                                    data-alt="Yellow moong dal in a ceramic plate"
-                                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCyviOEZqWjgnPxDcwJdtdFKm7_fBZpyQF6v9wOPaVDeQzjnZUZ-vZc5bSttHPzFUCYoiPjCxxWeb9l8DpbVyvxNQVhuayhZh2sPuLodY9tn3g6QHnJ3msWol1IW31XkJ2Dncjk_C07X0gD-sKZRuFi4Cr_Z99F7mN_fyevMsBrtdJoPDFagYCADlelVbDRq01S16PEgRm1hYr-vDSbFOEW7Xi6b8Kbv24I5QTdwUTbTLC-li0R0Fudr7uBEWlNgwPkfU2monhcYBIc')">
-                                </div>
-                                <div>
-                                    <p class="font-bold text-slate-900 dark:text-white">ডাল মুগ</p>
-                                    <p class="text-xs text-slate-500">প্রতি কেজি</p>
-                                    <p class="text-xl font-bold text-primary mt-1">১২০ – ১৩০ টাকা</p>
-                                </div>
-                            </div>
-                            <div
-                                class="p-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 flex flex-col gap-3">
-                                <div class="w-full h-32 bg-center bg-cover rounded-lg"
-                                    data-alt="Wheat flour pile with whole wheat grains"
-                                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5s4gC6DD3JjX7urcMQrb2vvnF29DkzzdVLzBSuz40AsoVVy2bng2HCx6kKhPYaQcWox0FfU2pPcUHEaRqUr-tdiiePp7wLkPFiMv4No3UslV6SrkkYIaoGck7DI9q5zaePfhy7r1aFr5iNp6CbfrphLcoUtiP-seJlhZWj-9MMfcM_KLrfAbb8J0MmW1n-dl9YKHKdr812D4OXhpfGh0jxt-jBLBQYolmvga5hCzBiPWoe_gfAyReVZCKjjBqCjAR6pGQUbORfjGd')">
-                                </div>
-                                <div>
-                                    <p class="font-bold text-slate-900 dark:text-white">আটা</p>
-                                    <p class="text-xs text-slate-500">প্রতি কেজি</p>
-                                    <p class="text-xl font-bold text-primary mt-1">৫০ – ৫৫ টাকা</p>
-                                </div>
-                            </div>
-                            <div
-                                class="p-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 flex flex-col gap-3">
-                                <div class="w-full h-32 bg-center bg-cover rounded-lg"
-                                    data-alt="White refined sugar crystals"
-                                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBEKAeWJ0zBVTt_KqMigWoqv4Q_6pEcR2kr1lcc7Vwe1Zi05MueoarFzzXdxqskf-LJAOnHU2s-gZsyshy_cRb2sDB7s14YDxXaRBA0C9QzSZEZzdzc8oVbBbnwZ_UttJufRm-UPs8ggtZxC0oC5H1_vBc2HaZwT-LxrlQ-eRY0hBVuecY0m5YjEoiRAN_2eGyDdhge_IWx_QUsGnL-f_2W-6eAN6j2JSh_zUYEcGFpjD32wUA7q43V4i9kh9OB5VSzvAL05wjvSVpG')">
-                                </div>
-                                <div>
-                                    <p class="font-bold text-slate-900 dark:text-white">চিনি</p>
-                                    <p class="text-xs text-slate-500">প্রতি কেজি</p>
-                                    <p class="text-xl font-bold text-primary mt-1">১৩০ – ১৪০ টাকা</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </details>
-                <!-- Fruits Category -->
-                <details
-                    class="group bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
-                    <summary
-                        class="flex cursor-pointer items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="size-10 rounded-lg bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-600 dark:text-red-400">
-                                <span class="material-symbols-outlined">nutrition</span>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-lg">ফল (Fruits)</h3>
-                                <p class="text-xs text-slate-500">মৌসুমী ও আমদানিকৃত ফল</p>
-                            </div>
-                        </div>
-                        <span
-                            class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
-                    </summary>
-                    <div class="p-5 text-center text-slate-500">এই ক্যাটাগরির তথ্য শীঘ্রই আপডেট করা হবে।</div>
-                </details>
-                <!-- Vegetables Category -->
-                <details
-                    class="group bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
-                    <summary
-                        class="flex cursor-pointer items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="size-10 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400">
-                                <span class="material-symbols-outlined">eco</span>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-lg">সবজি (Vegetables)</h3>
-                                <p class="text-xs text-slate-500">তাজা দেশীয় সবজি</p>
-                            </div>
-                        </div>
-                        <span
-                            class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
-                    </summary>
-                    <div class="p-5 text-center text-slate-500">ডেটা লোড হচ্ছে...</div>
-                </details>
-                <!-- Fish Category -->
-                <details
-                    class="group bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
-                    <summary
-                        class="flex cursor-pointer items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="size-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400">
-                                <span class="material-symbols-outlined">set_meal</span>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-lg">মাছ (Fish)</h3>
-                                <p class="text-xs text-slate-500">নদী ও সাগরের তাজা মাছ</p>
-                            </div>
-                        </div>
-                        <span
-                            class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
-                    </summary>
-                    <div class="p-5 text-center text-slate-500">তথ্য আপডেট করা হচ্ছে।</div>
-                </details>
-                <!-- Meat Category -->
-                <details
-                    class="group bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
-                    <summary
-                        class="flex cursor-pointer items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="size-10 rounded-lg bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-600 dark:text-red-400">
-                                <span class="material-symbols-outlined">kebab_dining</span>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-lg">মাংস (Meat)</h3>
-                                <p class="text-xs text-slate-500">মুরগি, গরু ও খাসির মাংস</p>
-                            </div>
-                        </div>
-                        <span
-                            class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
-                    </summary>
-                    <div class="p-5 text-center text-slate-500">তথ্য আপডেট করা হচ্ছে।</div>
-                </details>
-                <!-- Fuel Category -->
-                <details
-                    class="group bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
-                    <summary
-                        class="flex cursor-pointer items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="size-10 rounded-lg bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center text-yellow-600 dark:text-yellow-400">
-                                <span class="material-symbols-outlined">local_gas_station</span>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-lg">জ্বালানি (Fuel)</h3>
-                                <p class="text-xs text-slate-500">গ্যাস ও বিদ্যুৎ</p>
-                            </div>
-                        </div>
-                        <span
-                            class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
-                    </summary>
-                    <div class="p-5 text-center text-slate-500">তথ্য আপডেট করা হচ্ছে।</div>
-                </details>
-                <!-- Others Category -->
-                <details
-                    class="group bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
-                    <summary
-                        class="flex cursor-pointer items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400">
-                                <span class="material-symbols-outlined">more_horiz</span>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-lg">অন্যান্য (Others)</h3>
-                                <p class="text-xs text-slate-500">বিবিধ পণ্যসামগ্রী</p>
-                            </div>
-                        </div>
-                        <span
-                            class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
-                    </summary>
-                    <div class="p-5 text-center text-slate-500">তথ্য আপডেট করা হচ্ছে।</div>
-                </details>
-            </div>
-            <!-- Complaint Banner -->
+              </div>
+              <span
+                className="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform"
+                >expand_more</span
+              >
+            </summary>
             <div
-                class="mt-12 p-6 rounded-2xl bg-gradient-to-r from-primary to-green-600 text-white flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="flex items-center gap-4">
-                    <div class="size-14 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-md">
-                        <span class="material-symbols-outlined text-3xl">support_agent</span>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold">অতিরিক্ত দাম নিচ্ছেন বিক্রেতা?</h4>
-                        <p class="text-white/80">ভোক্তা অধিকার সংরক্ষণ অধিদপ্তরে অভিযোগ জানান</p>
-                    </div>
+              className="p-5 pt-0 border-t border-slate-100 dark:border-slate-800"
+            >
+              <div
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-5"
+              >
+                <!-- Item Card -->
+                <div
+                  className="p-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 flex flex-col gap-3"
+                >
+                  <div
+                    className="w-full h-32 bg-center bg-cover rounded-lg"
+                    data-alt="High quality long grain rice in a bowl"
+                    style="
+                      background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuC-kKKKAXy_C0tsb--SxykzAvOluF-6FKUxWT456bwvrxA6iZgGVhM9WnuP-PSBKqdBdfxhklKlMzQqXeTSb3t4358un_94Ch_ojdPo34HB-vwANjcbw7d2Y9UAffG0x8uLzimr4zofWgXrF_zCLk0V0rFCjvvYMatlRVqkX40k6EPntnTXAyECsdrc1W_12e_f9lfQKUr4cATQK0GhdI4oVPyI67qnHmDXi3eY4NWSDfKkwLX-dM1_-OByWnBbLz4DTGyBN1T_TxRA&quot;);
+                    "
+                  ></div>
+                  <div>
+                    <p className="font-bold text-slate-900 dark:text-white">
+                      চাল সরু
+                    </p>
+                    <p className="text-xs text-slate-500">প্রতি কেজি</p>
+                    <p className="text-xl font-bold text-primary mt-1">
+                      ৬৫ – ৭০ টাকা
+                    </p>
+                  </div>
                 </div>
-                <button
-                    class="px-8 py-3 bg-white text-primary font-bold rounded-xl hover:bg-slate-50 transition-colors">অভিযোগ
-                    করুন</button>
+                <div
+                  className="p-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 flex flex-col gap-3"
+                >
+                  <div
+                    className="w-full h-32 bg-center bg-cover rounded-lg"
+                    data-alt="Yellow moong dal in a ceramic plate"
+                    style="
+                      background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCyviOEZqWjgnPxDcwJdtdFKm7_fBZpyQF6v9wOPaVDeQzjnZUZ-vZc5bSttHPzFUCYoiPjCxxWeb9l8DpbVyvxNQVhuayhZh2sPuLodY9tn3g6QHnJ3msWol1IW31XkJ2Dncjk_C07X0gD-sKZRuFi4Cr_Z99F7mN_fyevMsBrtdJoPDFagYCADlelVbDRq01S16PEgRm1hYr-vDSbFOEW7Xi6b8Kbv24I5QTdwUTbTLC-li0R0Fudr7uBEWlNgwPkfU2monhcYBIc&quot;);
+                    "
+                  ></div>
+                  <div>
+                    <p className="font-bold text-slate-900 dark:text-white">
+                      ডাল মুগ
+                    </p>
+                    <p className="text-xs text-slate-500">প্রতি কেজি</p>
+                    <p className="text-xl font-bold text-primary mt-1">
+                      ১২০ – ১৩০ টাকা
+                    </p>
+                  </div>
+                </div>
+                <div
+                  className="p-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 flex flex-col gap-3"
+                >
+                  <div
+                    className="w-full h-32 bg-center bg-cover rounded-lg"
+                    data-alt="Wheat flour pile with whole wheat grains"
+                    style="
+                      background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuC5s4gC6DD3JjX7urcMQrb2vvnF29DkzzdVLzBSuz40AsoVVy2bng2HCx6kKhPYaQcWox0FfU2pPcUHEaRqUr-tdiiePp7wLkPFiMv4No3UslV6SrkkYIaoGck7DI9q5zaePfhy7r1aFr5iNp6CbfrphLcoUtiP-seJlhZWj-9MMfcM_KLrfAbb8J0MmW1n-dl9YKHKdr812D4OXhpfGh0jxt-jBLBQYolmvga5hCzBiPWoe_gfAyReVZCKjjBqCjAR6pGQUbORfjGd&quot;);
+                    "
+                  ></div>
+                  <div>
+                    <p className="font-bold text-slate-900 dark:text-white">
+                      আটা
+                    </p>
+                    <p className="text-xs text-slate-500">প্রতি কেজি</p>
+                    <p className="text-xl font-bold text-primary mt-1">
+                      ৫০ – ৫৫ টাকা
+                    </p>
+                  </div>
+                </div>
+                <div
+                  className="p-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 flex flex-col gap-3"
+                >
+                  <div
+                    className="w-full h-32 bg-center bg-cover rounded-lg"
+                    data-alt="White refined sugar crystals"
+                    style="
+                      background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBEKAeWJ0zBVTt_KqMigWoqv4Q_6pEcR2kr1lcc7Vwe1Zi05MueoarFzzXdxqskf-LJAOnHU2s-gZsyshy_cRb2sDB7s14YDxXaRBA0C9QzSZEZzdzc8oVbBbnwZ_UttJufRm-UPs8ggtZxC0oC5H1_vBc2HaZwT-LxrlQ-eRY0hBVuecY0m5YjEoiRAN_2eGyDdhge_IWx_QUsGnL-f_2W-6eAN6j2JSh_zUYEcGFpjD32wUA7q43V4i9kh9OB5VSzvAL05wjvSVpG&quot;);
+                    "
+                  ></div>
+                  <div>
+                    <p className="font-bold text-slate-900 dark:text-white">
+                      চিনি
+                    </p>
+                    <p className="text-xs text-slate-500">প্রতি কেজি</p>
+                    <p className="text-xl font-bold text-primary mt-1">
+                      ১৩০ – ১৪০ টাকা
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-        </main>
-        <!-- Footer -->
-        <footer class="bg-green-50 dark:bg-slate-950 border-t border-primary/10 mt-12">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
-                    <div class="flex items-center gap-6">
-                        <div class="w-20 h-20 bg-center bg-contain bg-no-repeat"
-                            data-alt="Government of Bangladesh Official Logo"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCtWWIIDmmcTldVvtPP0rRG4HRlJd_GFH16MHe3spSOSu6La2mxxjswQIZrID1i46BEDsFMHNNdAAZX9l4djxF5hep-uaojTLHA-8TUrEOu7v7uUi-lvbhoTsA_6fUxMZsxVFkcKlzNk0NewfwEf4DeSjNAxHxHuT4hO3bb_KNW6LcaUwB8pioayyYPUSP74R4DhoCYafeIfb7WD9mJv4Z7wC1jDKZhP8U5-aE5nPriCVIsCzGB7cxm__9CEkGqOXdvpEDcrv0KBSu4')">
-                        </div>
-                        <div>
-                            <p class="text-primary font-bold text-xl">জাতীয় ভোক্তা-অধিকার সংরক্ষণ অধিদপ্তর</p>
-                            <p class="text-slate-600 dark:text-slate-400">বাণিজ্য মন্ত্রণালয়, গণপ্রজাতন্ত্রী বাংলাদেশ
-                                সরকার</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-8">
-                        <div class="text-center">
-                            <p class="font-bold text-slate-900 dark:text-white mb-2">যোগাযোগ</p>
-                            <p class="text-sm text-slate-600 dark:text-slate-400">হটলাইন: ১৬১২১</p>
-                        </div>
-                        <div class="text-center">
-                            <p class="font-bold text-slate-900 dark:text-white mb-2">সামাজিক যোগাযোগ</p>
-                            <div class="flex gap-4">
-                                <span class="material-symbols-outlined text-primary cursor-pointer">public</span>
-                                <span class="material-symbols-outlined text-primary cursor-pointer">mail</span>
-                            </div>
-                        </div>
-                    </div>
+          </details>
+          <!-- Fruits Category -->
+          <details
+            className="group bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden"
+          >
+            <summary
+              className="flex cursor-pointer items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
+            >
+              <div className="flex items-center gap-4">
+                <div
+                  className="size-10 rounded-lg bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-600 dark:text-red-400"
+                >
+                  <span className="material-symbols-outlined">nutrition</span>
                 </div>
-                <div class="mt-12 pt-8 border-t border-primary/10 text-center text-sm text-slate-500">
-                    <p>© ২০২৪ জাতীয় ভোক্তা-অধিকার সংরক্ষণ অধিদপ্তর। সর্বস্বত্ব সংরক্ষিত।</p>
+                <div>
+                  <h3 className="font-bold text-lg">ফল (Fruits)</h3>
+                  <p className="text-xs text-slate-500">
+                    মৌসুমী ও আমদানিকৃত ফল
+                  </p>
                 </div>
+              </div>
+              <span
+                className="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform"
+                >expand_more</span
+              >
+            </summary>
+            <div className="p-5 text-center text-slate-500">
+              এই ক্যাটাগরির তথ্য শীঘ্রই আপডেট করা হবে।
             </div>
-        </footer>
+          </details>
+          <!-- Vegetables Category -->
+          <details
+            className="group bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden"
+          >
+            <summary
+              className="flex cursor-pointer items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
+            >
+              <div className="flex items-center gap-4">
+                <div
+                  className="size-10 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400"
+                >
+                  <span className="material-symbols-outlined">eco</span>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">সবজি (Vegetables)</h3>
+                  <p className="text-xs text-slate-500">তাজা দেশীয় সবজি</p>
+                </div>
+              </div>
+              <span
+                className="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform"
+                >expand_more</span
+              >
+            </summary>
+            <div className="p-5 text-center text-slate-500">
+              ডেটা লোড হচ্ছে...
+            </div>
+          </details>
+          <!-- Fish Category -->
+          <details
+            className="group bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden"
+          >
+            <summary
+              className="flex cursor-pointer items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
+            >
+              <div className="flex items-center gap-4">
+                <div
+                  className="size-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400"
+                >
+                  <span className="material-symbols-outlined">set_meal</span>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">মাছ (Fish)</h3>
+                  <p className="text-xs text-slate-500">
+                    নদী ও সাগরের তাজা মাছ
+                  </p>
+                </div>
+              </div>
+              <span
+                className="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform"
+                >expand_more</span
+              >
+            </summary>
+            <div className="p-5 text-center text-slate-500">
+              তথ্য আপডেট করা হচ্ছে।
+            </div>
+          </details>
+          <!-- Meat Category -->
+          <details
+            className="group bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden"
+          >
+            <summary
+              className="flex cursor-pointer items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
+            >
+              <div className="flex items-center gap-4">
+                <div
+                  className="size-10 rounded-lg bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-600 dark:text-red-400"
+                >
+                  <span className="material-symbols-outlined"
+                    >kebab_dining</span
+                  >
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">মাংস (Meat)</h3>
+                  <p className="text-xs text-slate-500">
+                    মুরগি, গরু ও খাসির মাংস
+                  </p>
+                </div>
+              </div>
+              <span
+                className="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform"
+                >expand_more</span
+              >
+            </summary>
+            <div className="p-5 text-center text-slate-500">
+              তথ্য আপডেট করা হচ্ছে।
+            </div>
+          </details>
+          <!-- Fuel Category -->
+          <details
+            className="group bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden"
+          >
+            <summary
+              className="flex cursor-pointer items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
+            >
+              <div className="flex items-center gap-4">
+                <div
+                  className="size-10 rounded-lg bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center text-yellow-600 dark:text-yellow-400"
+                >
+                  <span className="material-symbols-outlined"
+                    >local_gas_station</span
+                  >
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">জ্বালানি (Fuel)</h3>
+                  <p className="text-xs text-slate-500">গ্যাস ও বিদ্যুৎ</p>
+                </div>
+              </div>
+              <span
+                className="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform"
+                >expand_more</span
+              >
+            </summary>
+            <div className="p-5 text-center text-slate-500">
+              তথ্য আপডেট করা হচ্ছে।
+            </div>
+          </details>
+          <!-- Others Category -->
+          <details
+            className="group bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden"
+          >
+            <summary
+              className="flex cursor-pointer items-center justify-between p-5 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
+            >
+              <div className="flex items-center gap-4">
+                <div
+                  className="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400"
+                >
+                  <span className="material-symbols-outlined">more_horiz</span>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">অন্যান্য (Others)</h3>
+                  <p className="text-xs text-slate-500">বিবিধ পণ্যসামগ্রী</p>
+                </div>
+              </div>
+              <span
+                className="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform"
+                >expand_more</span
+              >
+            </summary>
+            <div className="p-5 text-center text-slate-500">
+              তথ্য আপডেট করা হচ্ছে।
+            </div>
+          </details>
+        </div>
+        <!-- Complaint Banner -->
+        <div
+          className="mt-12 p-6 rounded-2xl bg-gradient-to-r from-primary to-green-600 text-white flex flex-col md:flex-row items-center justify-between gap-6"
+        >
+          <div className="flex items-center gap-4">
+            <div
+              className="size-14 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-md"
+            >
+              <span className="material-symbols-outlined text-3xl"
+                >support_agent</span
+              >
+            </div>
+            <div>
+              <h4 className="text-xl font-bold">
+                অতিরিক্ত দাম নিচ্ছেন বিক্রেতা?
+              </h4>
+              <p className="text-white/80">
+                ভোক্তা অধিকার সংরক্ষণ অধিদপ্তরে অভিযোগ জানান
+              </p>
+            </div>
+          </div>
+          <button
+            className="px-8 py-3 bg-white text-primary font-bold rounded-xl hover:bg-slate-50 transition-colors"
+          >
+            অভিযোগ করুন
+          </button>
+        </div>
+      </main>
+      <!-- Footer -->
+      <footer
+        className="bg-green-50 dark:bg-slate-950 border-t border-primary/10 mt-12"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div
+            className="flex flex-col md:flex-row items-center justify-between gap-8"
+          >
+            <div className="flex items-center gap-6">
+              <div
+                className="w-20 h-20 bg-center bg-contain bg-no-repeat"
+                data-alt="Government of Bangladesh Official Logo"
+                style="
+                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCtWWIIDmmcTldVvtPP0rRG4HRlJd_GFH16MHe3spSOSu6La2mxxjswQIZrID1i46BEDsFMHNNdAAZX9l4djxF5hep-uaojTLHA-8TUrEOu7v7uUi-lvbhoTsA_6fUxMZsxVFkcKlzNk0NewfwEf4DeSjNAxHxHuT4hO3bb_KNW6LcaUwB8pioayyYPUSP74R4DhoCYafeIfb7WD9mJv4Z7wC1jDKZhP8U5-aE5nPriCVIsCzGB7cxm__9CEkGqOXdvpEDcrv0KBSu4&quot;);
+                "
+              ></div>
+              <div>
+                <p className="text-primary font-bold text-xl">
+                  জাতীয় ভোক্তা-অধিকার সংরক্ষণ অধিদপ্তর
+                </p>
+                <p className="text-slate-600 dark:text-slate-400">
+                  বাণিজ্য মন্ত্রণালয়, গণপ্রজাতন্ত্রী বাংলাদেশ সরকার
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-8">
+              <div className="text-center">
+                <p className="font-bold text-slate-900 dark:text-white mb-2">
+                  যোগাযোগ
+                </p>
+                <p className="text-sm text-slate-600 dark:text-slate-400">
+                  হটলাইন: ১৬১২১
+                </p>
+              </div>
+              <div className="text-center">
+                <p className="font-bold text-slate-900 dark:text-white mb-2">
+                  সামাজিক যোগাযোগ
+                </p>
+                <div className="flex gap-4">
+                  <span
+                    className="material-symbols-outlined text-primary cursor-pointer"
+                    >public</span
+                  >
+                  <span
+                    className="material-symbols-outlined text-primary cursor-pointer"
+                    >mail</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="mt-12 pt-8 border-t border-primary/10 text-center text-sm text-slate-500"
+          >
+            <p>
+              © ২০২৪ জাতীয় ভোক্তা-অধিকার সংরক্ষণ অধিদপ্তর। সর্বস্বত্ব সংরক্ষিত।
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
-</body>
-
+  </body>
 </html>
